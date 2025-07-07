@@ -3,7 +3,7 @@
 3,Gabriel Jabour
 4,Lucas oliveira
 5,Gabriel Jabour
-6,Gabriel Jabour
-7,Lucas oliveira
+6,Lucas oliveira
+7,Gabriel Jabour
 8,Lucas oliveira
 9,Lucas oliveira

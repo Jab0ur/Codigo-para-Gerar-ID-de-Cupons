@@ -12,7 +12,8 @@ input(
 
 # === CONFIGURAÇÃO ===
 arquivo_entrada = 'entrada.txt'
-arquivo_saida = 'ids_gerados.txt'
+arquivo_saida_txt = 'ids_gerados.txt'
+arquivo_saida_excel = 'ids_gerados.xlsx'
 
 try:
     # === LEITURA DO TXT DE ENTRADA ===
@@ -45,11 +46,14 @@ try:
     df_result = df_result.sort_values(by='id').reset_index(drop=True)
 
     # === SALVAR COMO TXT ===
-    df_result.to_csv(arquivo_saida, index=False, header=False)
+    df_result.to_csv(arquivo_saida_txt, index=False, header=False)
 
-    print(f"\n✅ IDs gerados, distribuídos aleatoriamente e salvos em ordem crescente no arquivo: {arquivo_saida}")
+    # === SALVAR COMO XLSX ===
+    df_result.to_excel(arquivo_saida_excel, index=False)
+
+    print(f"\n✅ IDs gerados e salvos em:\n- {arquivo_saida_txt}\n- {arquivo_saida_excel}")
 
 except FileNotFoundError:
     print('\n❌ Arquivo "entrada.txt" não encontrado! Verifique se ele está na mesma pasta e tente novamente.')
 except Exception as e:
-    print(f'\n❌ Ocorreu um erro: {e}')
+    print(f'\n❌ Ocorreu um erro: {e}') 
